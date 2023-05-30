@@ -1,0 +1,26 @@
+{% extends 'main/base.html' %}
+{% load crispy_forms_filters %}
+
+{% block title %}
+    Edit Match
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h5 class="card-title">Edit Match</h5>
+        </div>
+        <div class="card-body">
+            <form method="POST">
+                {% csrf_token %}
+                {{ form_match|crispy }}
+                <div class="btn-group">
+                    <a href="/{{ l.league_id }}/editmatch/{{ m.match_id }}/as" class="btn btn-primary">Add Scores</a>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

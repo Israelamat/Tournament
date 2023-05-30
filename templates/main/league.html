@@ -1,0 +1,143 @@
+ {% extends "main/base.html" %}
+{% load main_tags %}
+
+{% block title %}
+    {{ l.name }}
+{% endblock %}
+
+{% block content %}
+<style>
+.league-name {
+  background-color: #F2F2F2;
+  border-radius: 10px;
+  font-size: 2rem;
+  color: #333333;
+  padding: 10px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+
+    .edit-league-icon {
+        font-size: 2rem;
+        color: #000000;
+    }
+
+    .table-success {
+        background-color: #e0f7fa;
+        color: #000000;
+    }
+
+    .table-light {
+        background-color: #f8f8f8;
+        color: #000000;
+    }
+
+    .table-danger {
+        background-color: #ffebee;
+        color: #000000;
+    }
+
+    .fixed-bottom {
+        background-color: rgba(255, 255, 255, 0.9);
+        margin-left: 250px;
+        padding: 10px;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+</style>
+
+
+
+
+<br>
+<h1 class="league-name">
+    <center>
+        <b>{{ l.name }}</b>
+        <a href="{{ l.league_id }}/editleague" class="edit-league-icon"><i class="bi bi-pencil"></i></a>
+    </center>
+</h1>
+<br>
+<form method="post" action="#">
+    {% csrf_token %}
+    <p><center><font size="+3">Table</font></center></p>
+    <ul>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Points</th>
+                    <th scope="col">Goal difference</th>
+                    <th scope="col">Goals scored</th>
+                    <th scope="col">Goals lost</th>
+                    <th scope="col">Wins</th>
+                    <th scope="col">Draws</th>
+                    <th scope="col">Lost</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for team in l.team_set.all|sortleague %}
+                {% if forloop.counter <= l.promoted_teams %}
+                <tr class="table-success">
+                {% elif forloop.counter > l.promoted_teams and forloop.counter <= l.team_set.count|div:l.relegated_teams %}
+                <tr class="table-light">
+                {% else %}
+                <tr class="table-danger">
+                {% endif %}
+                    <th scope="row">{{ forloop.counter }}</th>
+                    <td><a href="{{ l.league_id }}/{{ team.team_id }}">{{ team.name }}</a></td>
+                    <td>{{ team.points }}</td>
+                    <td>{{ team.goals_scored|div:team.goals_lost }}</td>
+                    <td>{{ team.goals_scored }}</td>
+                    <td>{{ team.goals_lost }}</td>
+                    <td>{{ team.wins }}</td>
+                    <td>{{ team.draws }}</td>
+                    <td>{{ team.lost }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <br><br>
+        <p><center><font size="+3">Games</font></center></p>
+        {% for match_list in m %}
+        <table class="table">
+            <tbody>
+                <tr>
+                    <td><b>Match day {{ forloop.counter }}</b></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    {% for match in match_list %}
+                    <td>{{ match.home_team_id.name }}</td>
+                    <td>{{ match.home_team_result }}</td>
+                    <td>{{ match.away_team_result }}</td>
+                    <td>{{ match.away_team_id.name }}</td>
+                    <td><a href="{{ l.league_id }}/editmatch/{{ match.match_id }}"><i class="fas fa-pencil-alt"></i></a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% endfor %}
+    </ul>
+    <br><br>
+    <div >
+        <br>
+        <center>
+            <a href="/{{ l.league_id }}/createteam" class="btn btn-primary">Add new team</a>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="/" class="btn btn-primary">Return</a>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <button type="submit" class="btn btn-primary" name="generateSchedule" value="generateSchedule">Generate schedule</button>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <button type="delete" class="btn btn-danger" name="deleteL" value="deleteL">Delete league</button>
+        </center>
+        <br>
+    </div>
+</form>
+{% endblock %}

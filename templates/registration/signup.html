@@ -1,0 +1,53 @@
+{% extends 'main/base.html' %}
+{% load crispy_forms_filters %}
+
+{% block title %}Create Account{% endblock %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+<style>
+    body {
+        background-color: #f2f2f2;
+    }
+
+    .signup-container {
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 40px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .signup-title {
+        text-align: center;
+        font-size: 24px;
+        color: #333;
+        margin-bottom: 30px;
+    }
+
+    .btn-signup {
+        background-color: #4caf50;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn-signup:hover {
+        background-color: #45a049;
+    }
+</style>
+<div class="signup-container">
+    <h1 class="signup-title">Sign Up</h1>
+    <form method="POST" class="form-group">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <button type="submit" class="btn btn-signup">Sign Up</button>
+    </form>
+</div>
+{% endblock %}

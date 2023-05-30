@@ -1,0 +1,92 @@
+{% extends 'main/base.html' %}
+
+{% load static %}
+
+{% block content %}
+<style>
+  body {
+    background-color: #f2f2f2;
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+
+  .center {
+    text-align: center;
+  }
+
+  .btn-primary {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+  }
+
+  .btn-primary:hover {
+    background-color: #0056b3;
+  }
+
+  .btn-secondary {
+    background-color: #6c757d;
+    color: #fff;
+    border: none;
+  }
+
+  .btn-secondary:hover {
+    background-color: #535b61;
+  }
+
+  .tournaments-container {
+    margin-top: 40px;
+  }
+
+  .tournament-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .tournament-card h2 {
+    font-size: 24px;
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+</style>
+
+<div class="center">
+  <h1>TOURNAMENT MANAGER</h1>
+</div>
+
+<br><br>
+
+{% if user.is_authenticated %}
+  <div class="center">
+    <p><b>You are logged in as {{ user.username }}</b></p>
+    <p>Your tournaments</p>
+    <div class="tournaments-container">
+      {% for i in user.league.all %}
+        <div class="tournament-card">
+          <h2>{{ i.name }}</h2>
+          <a href="/{{ i.league_id }}" class="btn btn-secondary"><i class="fas fa-chevron-right"></i></a>
+        </div>
+      {% endfor %}
+    </div>
+    <br>
+    <a href="/createleague" class="btn btn-primary">Create new tournament</a>
+  </div>
+{% else %}
+  <div class="center">
+    <img src="{% static 'main/media/cup.jpg' %}" width="200" height="200" alt="" />
+    <br>
+    <b>Create and manage your own tournaments</b>
+    <br><br>
+    <a href="/reg/signup" class="btn btn-primary">Sign up now</a>
+  </div>
+{% endif %}
+{% endblock %}

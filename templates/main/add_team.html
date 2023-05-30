@@ -1,0 +1,23 @@
+{% extends 'main/base.html' %}
+{% load crispy_forms_filters %}
+
+{% block title %}
+    Add Team
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h5 class="card-title">Add New Team</h5>
+        </div>
+        <div class="card-body">
+            <form method="POST">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
