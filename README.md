@@ -12,10 +12,6 @@ Tournament es una plataforma web desarrollada con Python y Django que facilita l
 - **Seguimiento de Estadísticas:** Registrar y visualizar estadísticas de jugadores y equipos.
 - **Interfaz Responsiva:** Diseño adaptable para una experiencia de usuario óptima en diferentes dispositivos.
 
-## Capturas de Pantalla
-![Captura de Pantalla 1](https://i.postimg.cc/qRdVs0gD/home.png) | [![login.png](https://i.postimg.cc/zBSmpMgz/login.png)](https://postimg.cc/2b6XS0GM) | [![tourn2.png](https://i.postimg.cc/7ZCpjb2Q/tourn2.png)](https://postimg.cc/bZhCtyLQ) | [![tourn3-PNG.png](https://i.postimg.cc/xj5DzwQg/tourn3-PNG.png)](https://postimg.cc/xqX4rFcb) | [![tourn4.png](https://i.postimg.cc/gktCM3nZ/tourn4.png)](https://postimg.cc/crYkCg7x)
-
-
 ## Requisitos del Sistema
 
 - Python 3.x
@@ -32,4 +28,5 @@ Tournament es una plataforma web desarrollada con Python y Django que facilita l
 6. El servidor de pruebas se iniciará y mostrará un mensaje indicando en qué dirección IP y puerto está escuchando. Por lo general, será algo como `Starting development server at http://127.0.0.1:8000/`.
 7. Abre tu navegador web y ve a la dirección `http://127.0.0.1:8000/` (o la dirección IP y puerto que se mostró en el paso anterior). Verás la página de inicio de tu proyecto Django si todo está configurado correctamente.****
 
-
+## Capturas de Pantalla
+![Captura de Pantalla 1](https://i.postimg.cc/qRdVs0gD/home.png) | [![login.png](https://i.postimg.cc/zBSmpMgz/login.png)](https://postimg.cc/2b6XS0GM) | [![tourn2.png](https://i.postimg.cc/7ZCpjb2Q/tourn2.png)](https://postimg.cc/bZhCtyLQ) | [![tourn3-PNG.png](https://i.postimg.cc/xj5DzwQg/tourn3-PNG.png)](https://postimg.cc/xqX4rFcb) | [![tourn4.png](https://i.postimg.cc/gktCM3nZ/tourn4.png)](https://postimg.cc/crYkCg7x)
