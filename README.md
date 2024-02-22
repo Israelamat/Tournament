@@ -13,11 +13,8 @@ Tournament es una plataforma web desarrollada con Python y Django que facilita l
 - **Interfaz Responsiva:** Diseño adaptable para una experiencia de usuario óptima en diferentes dispositivos.
 
 ## Capturas de Pantalla
-![Captura de Pantalla 1](https://i.postimg.cc/qRdVs0gD/home.png){: width="400px"}
-[![login.png](https://i.postimg.cc/zBSmpMgz/login.png)](https://postimg.cc/2b6XS0GM){: width="100px"}
-[![tourn2.png](https://i.postimg.cc/7ZCpjb2Q/tourn2.png)](https://postimg.cc/bZhCtyLQ){: width="100px"}
-[![tourn3-PNG.png](https://i.postimg.cc/xj5DzwQg/tourn3-PNG.png)](https://postimg.cc/xqX4rFcb){: width="100px"}
-[![tourn4.png](https://i.postimg.cc/gktCM3nZ/tourn4.png)](https://postimg.cc/crYkCg7x){: width="100px"}
+![Captura de Pantalla 1](https://i.postimg.cc/qRdVs0gD/home.png) | [![login.png](https://i.postimg.cc/zBSmpMgz/login.png)](https://postimg.cc/2b6XS0GM) | [![tourn2.png](https://i.postimg.cc/7ZCpjb2Q/tourn2.png)](https://postimg.cc/bZhCtyLQ) | [![tourn3-PNG.png](https://i.postimg.cc/xj5DzwQg/tourn3-PNG.png)](https://postimg.cc/xqX4rFcb) | [![tourn4.png](https://i.postimg.cc/gktCM3nZ/tourn4.png)](https://postimg.cc/crYkCg7x)
+
 
 ## Requisitos del Sistema
 
