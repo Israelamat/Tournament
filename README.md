@@ -13,7 +13,7 @@ Tournament es una plataforma web desarrollada con Python y Django que facilita l
 - **Interfaz Responsiva:** Diseño adaptable para una experiencia de usuario óptima en diferentes dispositivos.
 
 ## Capturas de Pantalla
-[![home.png](https://i.postimg.cc/qRdVs0gD/home.png)](https://postimg.cc/1gMjSkGD)
+![Captura de Pantalla](https://i.postimg.cc/qRdVs0gD/home.png){:width="400px"}
 
 ## Requisitos del Sistema
 
