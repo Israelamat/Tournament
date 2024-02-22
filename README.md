@@ -14,8 +14,8 @@ Tournament es una plataforma web desarrollada con Python y Django que facilita l
 
 ## Requisitos del Sistema
 
-- Python 3.x
-- Django 3.x
+- Python 3.9.5
+- Django 4.2.9
 - Navegador web moderno
 
 ## Instalación
