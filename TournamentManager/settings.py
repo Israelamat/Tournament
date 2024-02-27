@@ -14,7 +14,7 @@ SECRET_KEY = 'django-insecure-m#92btfeos316bs*uio&r@1$@=s+&j!x15%o0xc=%oik%)nh6b
 # SECURITY WARNING: don't run with debug turned on in production
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['*', 'isra712.store/', 'http://isra712.store/', '127.0.0.1']
 
 
 # Application definition
