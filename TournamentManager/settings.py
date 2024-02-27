@@ -15,7 +15,7 @@ SECRET_KEY = 'django-insecure-m#92btfeos316bs*uio&r@1$@=s+&j!x15%o0xc=%oik%)nh6b
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
-CSRF_TRUSTED_ORIGINS = ['http://isra712.store/', 'http://127.0.0.1:8000']
+CSRF_TRUSTED_ORIGINS = ['http://isra712.store', 'http://127.0.0.1:8000']
 
 
 # Application definition
